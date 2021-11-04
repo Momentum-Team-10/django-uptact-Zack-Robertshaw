@@ -28,6 +28,9 @@ urlpatterns = [
     path('contacts/<int:pk>/delete/',
          contacts_views.delete_contact,
          name='delete_contact'),
+# add url goes here this is the template at this url show me a template name= and also run the view that will show information to the template 
+    path('contacts/<int:pk>/',
+    )
 ]
 
 if settings.DEBUG:

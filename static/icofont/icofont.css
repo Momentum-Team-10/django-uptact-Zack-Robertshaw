@@ -32,6 +32,11 @@ url("./fonts/icofont.woff") format("woff");
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }
+/* added birthday cake here, eb46 = hex */
+.icofont-birthday-cake::before
+{
+  content: "\eb46";
+}
 
 .icofont-ui-email:before
 {

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Contact
+from .models import Contact, Note
 from .forms import ContactForm
 
 
@@ -46,3 +46,13 @@ def delete_contact(request, pk):
 
     return render(request, "contacts/delete_contact.html",
                   {"contact": contact})
+
+# def contact_detail(request, pk):
+#     pass
+
+def contact_details(request, pk):
+    contact = get_object_or_404(Contact, pk=pk)
+    notes = Note.objects.filter(contact_id=pk)
+    return render(request, "contacts/contact_details.html", {
+        "contact": contact, "notes": notes
+    })
